@@ -1,309 +1,408 @@
+/* --- Global Resets & Defaults --- */
 * {
-  margin: 0%;
-  padding: 0%;
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
+body {
+  background-color: #ffffff;
+  color: #1a1a1a;
+  overflow-x: hidden;
+}
+
+/* --- Nav Layout Styling --- */
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 15px 40px;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  list-style: none;
+}
+
+nav li {
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+nav ul a {
+  text-decoration: none;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+nav ul a:hover {
+  color: #000;
+}
+
+.socials {
+  display: flex;
+}
+
+.socials ul {
+  gap: 15px;
+}
+
+.socials a {
+  font-size: 14px;
+  color: #666;
+  text-decoration: none;
+}
+
+/* --- Header Section --- */
 header {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  padding: 50px 150px 100px 60px;
   align-items: center;
-  text-align: center;
-  height: 45vh;
+  padding: 140px 60px 80px 60px;
+  max-width: 2000px;
+  margin: 0 auto;
+  gap: 40px;
+}
+
+header .left {
+  display: flex;
+  align-items: center;
   gap: 20px;
-  font-weight: 400;
-  margin-top: 80px;
+  width: 45%;
+}
+
+header img.pp {
+  height: 120px;
+  width: 120px;
+  min-width: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-  font-weight: 400;
-  text-align: left;
-  font-size: 52px;
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 1.2;
 }
 
-header div {
-  width: 43%;
-  text-align: left;
-  gap: 5px;
+header .right {
+  width: 50%;
   display: flex;
-  justify-content: center;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
+  text-align: left;
 }
 
 .right h2 {
-  font-size: 40px;
-  font-weight: 400;
+  font-size: 28px;
+  font-weight: 500;
+  color: #333;
+}
+
+.right p {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 .btn {
   display: flex;
-  width: 370px;
-  margin-top: 20px;
-  justify-content: flex-start;
-  gap: 20px;
-  flex-direction: row;
-}
-
-main {
-  background-color: rgb(226, 226, 226);
-}
-
-header img {
-  height: 4cm;
-  width: 4cm;
-  left: 30px;
-  border-radius: 50%;
-}
-
-.left {
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-direction: row;
-}
-
-main {
-  padding: 60px;
-}
-
-.skill {
-  margin-top: 90px;
-}
-
-.skill h2 {
-  font-size: 40px;
-  font-weight: 600;
-}
-
-.skill ul {
-  list-style-type: circle;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  font-weight: 600;
-  margin-top: 50px;
-}
-
-.bar {
-  height: 20px;
-  width: 90%;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  overflow: hidden;
-  border: 1px solid grey;
-  border-radius: 10px;
+  gap: 15px;
   margin-top: 10px;
 }
 
-.progress {
-  width: 50%;
-  background-color: rgb(134, 134, 134);
-  color: white;
-  font-size: 12px;
-  height: 100%;
+button,
+.primary-btn {
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+button.primary,
+.primary-btn {
+  background-color: #000;
+  color: #fff;
+  border: none;
+}
+
+button.secondary {
+  background-color: transparent;
+  color: #000;
+  border: 2px solid #000;
+}
+
+button:hover,
+.primary-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* --- Main Layout Container --- */
+main {
+  background-color: #f5f5f7;
+  /* margin-left: 0%; */
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-self: center;
+  padding: 80px 60px;
+}
+
+/* --- Experience Work Submodule Layout --- */
+.all {
+  display: flex;
+  gap: 40px;
+  width: 100%;
+  margin-bottom: 60px;
+}
+
+.exp,
+.achieve {
+  flex: 1;
+}
+
+.exp h2,
+.achieve h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.contain {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.expitem {
+  display: flex;
   align-items: center;
+  background: #ffffff;
+  border-left: 4px solid #000;
+  padding: 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  gap: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.expitem:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+.expitem img {
+  width: 24px;
+  height: 24px;
+}
+
+.company {
+  font-weight: 700;
+}
+
+.duration {
+  font-size: 13px;
+  color: #777;
+}
+
+/* --- Tech Stack Section --- */
+.skill h2 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 20px;
 }
 
 .measure ul {
-  margin: 40px 0px;
   display: grid;
-
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  width: 100%;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 15px;
+  list-style: none;
+  margin: 30px 0;
 }
 
+.measure li {
+  background: #fff;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 14px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+}
+
+/* --- Previous Projects Section --- */
 .Exp {
-  margin-top: 50px;
+  margin-top: 80px;
 }
 
-.card {
-  margin-top: 20px;
-  width: 400px;
-  height: 300px;
-  border-radius: 10px;
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 19px;
+.Exp h2 {
+  font-size: 28px;
+  font-weight: 600;
 }
 
-.cardimg img,
-.cardtext {
-  width: 100%;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: start;
-}
-
-.cardtext {
-  padding: 10px;
+.section-desc {
+  margin: 10px 0 30px 0;
+  color: #555;
 }
 
 .cardsec {
-  width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 25px;
+  width: 100%;
 }
 
-
-.cardsec a {
-  color: black;
-  text-decoration: none;
-}
-
-@media only screen and (max-width:900px) {
-  header {
-    margin: 0%;
-    padding-top: 20px;
-    flex-direction: column;
-  }
-
-  .measure ul {
-    margin: 40px 0px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    width: 100%;
-  }
-
-  .cardsec {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr;
-  }
-
-  .card {
-    width: 100%;
-    height: 360px;
-  }
-
-  h1,
-  .right h2 {
-    font-size: 20px;
-  }
-
-  header div {
-    width: 100%;
-
-  }
-
-  header img {
-    height: 2cm;
-    width: 2cm;
-    left: 30px;
-    border-radius: 50%;
-  }
-
-  main {
-    padding: 40px;
-  }
-}
-
-footer {
-  height: 50vh;
-  background-color: white;
-  padding-top: 60px;
+.card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  height: 100%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
 }
 
-footer .top {
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.cardimg img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.cardtext {
+  padding: 20px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-sizing: border-box;
-
-  width: 80%;
-  border-bottom: 2px solid white;
-  padding-bottom: 10px;
+  flex-direction: column;
+  gap: 6px;
 }
 
-.top form {
-  border-bottom: 2px solid white;
-  margin-bottom: 30px;
+.cardtext h4 {
+  font-size: 18px;
+  color: #111;
 }
 
-.top form input {
-  height: 40px;
-  width: 250px;
-  background-color: rgba(245, 222, 179, 0);
-  border: none;
-  outline: none;
-  padding: 15px;
-  color: black;
+.cardtext h5 {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
 }
 
-.top button {
-  background-color: rgba(243, 242, 242, 0);
-  border: none;
+.cardtext h6 {
+  font-size: 13px;
+  color: #888;
+  font-weight: 400;
+}
+
+/* --- Footer Area --- */
+footer {
+  background-color: #ffffff;
+  padding: 60px 20px;
+  text-align: center;
+  border-top: 1px solid #eee;
+}
+
+.footer-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+footer h3 {
+  font-size: 22px;
+  margin-bottom: 12px;
 }
 
 footer p {
-  width: 40%;
-  color: black;
-  margin-left: 130px;
-  margin-top: 10px;
+  color: #666;
   font-size: 14px;
+  line-height: 1.6;
 }
 
-@media only screen and (max-width:900px) {
-
-  footer {
-    height: 30vh;
+/* --- Tablet and Mobile Responsive Architecture (< 900px) --- */
+@media only screen and (max-width: 900px) {
+  nav {
+    padding: 15px 20px;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
   }
 
-  footer p {
-    font-size: 10px;
-    width: 90%;
-    margin-left: 13px;
+  nav ul,
+  .socials {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
   }
 
-  footer .top {
+  header {
+    padding: 40px 20px;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  header .left {
     width: 100%;
     flex-direction: column;
-    gap: 20px;
-    padding: 10px 15px;
+    justify-content: center;
   }
 
-  .top form input {
-    width: 120px;
-    font-size: 10px;
-    padding: 0%;
+  h1 {
+    font-size: 32px;
+    text-align: center;
   }
 
-  .click {
-    font-size: 18px;
+  header .right {
+    width: 100%;
+    text-align: center;
+    align-items: center;
   }
 
-}
+  .right h2 {
+    font-size: 22px;
+  }
 
-footer a:hover {
-  margin-top: -10px;
-  transition: all .6s;
-}
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
 
-footer a img {
-  height: 30px;
-  width: 30px;
+  main {
+    padding: 40px 20px;
+  }
 
-}
+  .all {
+    flex-direction: column;
+    gap: 30px;
+  }
 
-.socialss {
-  display: flex;
-  gap: 20px;
-}
+  .measure ul {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  }
 
-
-h3 {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  color: black;
+  .cardsec {
+    grid-template-columns: 1fr;
+  }
 }

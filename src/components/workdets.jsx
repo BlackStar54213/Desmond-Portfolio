@@ -22,7 +22,7 @@ function Work() {
                     <div className="contain">
                         <div className="expitem"><img src={icon} alt="" /> <div className="itemdets">Udemy Web Dev Certificate at <span className="company">Udemy</span><br /><span className="duration">September 2023</span></div></div>
                         <div className="expitem">
-                            {/* <img src={icon} alt="" /> <div className="itemdets">Udemy Web Dev Certificate at <span className="company">Udemy</span><br /><span className="duration">September 2023</span></div> */}
+                            <img src={icon} alt="" /> <div className="itemdets">Bachelor of Engineering at <span className="company">Edo State University</span><br /><span className="duration">In-View</span></div>
                         </div>
                         <div className="expitem">
                             {/* <img src={icon} alt="" /> <div className="itemdets">Udemy Web Dev Certificate at <span className="company">Udemy</span><br /><span className="duration">September 2023</span></div> */}
