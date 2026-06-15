@@ -7,7 +7,7 @@ import Adric from './assets/adric.png';
 import Carrb from './assets/carrb.png';
 import CarrbAdmin from './assets/carrbadmin.png';
 import Della from './assets/Dellapng.png';
-import CV from './assets/DesmondIZu.pdf'
+import CV from './assets/DesmondIzu.pdf'
 function Progress(progress) {
   return (
     <div className="bar">
