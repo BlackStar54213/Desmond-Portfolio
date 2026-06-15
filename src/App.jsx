@@ -1,5 +1,5 @@
 import './App.css'
-import Nav from './components/Nav' // Verified inclusion
+import Nav from './components/nav' // Verified inclusion
 import Work from '../src/components/workdets'
 import Pic from './assets/me.jpg'
 import Aniverse from './assets/aniverse.png';
